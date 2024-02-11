@@ -1,0 +1,111 @@
+:root {
+  --text-color-primary: #1B1B1B;
+  --text-color-secondary: #7D7D7D;
+  --text-color-active: #3E29E3;
+  --tab-color-boder: #CBCBCC;
+  --input-color-default: #AEADAE;
+  --input-color-hovered: #3E29E3;
+  --input-color-error: #E80F3B;
+  --poppup-color-text-active: #3D28E1;
+  --gradient-angle: 45deg;
+  --font-size-h1: 48px;
+  --font-size-h2: 32px;
+  --font-size-h3: 24px;
+  --font-size-h4: 18px;
+  --font-size-p-lead: 24px;
+  --font-size-p-18: 18px;
+  --font-size-p-16: 16px;
+  --font-size-p-14: 14px;
+
+  // Переменные для межстрочного интервала
+  --line-height-h1: 56px;
+  --line-height-h2: 40px;
+  --line-height-h3: 32px;
+  --line-height-h4: 28px;
+  --line-height-p-lead: 32px;
+  --line-height-p-18: 28px;
+  --line-height-p-16: 24px;
+  --line-height-p-14: 20px;
+
+  // Переменные для веса шрифта
+  --font-weight-bold: bold;
+  --font-weight-medium: 500;
+  --font-weight-regular: 400;
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+
+
+html {
+  font-family: Graphik;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul, li {
+  list-style: none;
+}
+input:focus-visible {
+  outline: none;
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+  line-height: var(--line-height-h1);
+  font-weight: var(--font-weight-bold);
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  line-height: var(--line-height-h2);
+  font-weight: var(--font-weight-bold);
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+  line-height: var(--line-height-h3);
+  font-weight: var(--font-weight-medium);
+}
+
+h4 {
+  font-size: var(--font-size-h4);
+  line-height: var(--line-height-h4);
+  font-weight: var(--font-weight-medium);
+}
+
+// Стили для параграфов
+p {
+  &.lead {
+    font-size: var(--font-size-p-lead);
+    line-height: var(--line-height-p-lead);
+    font-weight: var(--font-weight-regular);
+  }
+
+  &.p-18 {
+    font-size: var(--font-size-p-18);
+    line-height: var(--line-height-p-18);
+    font-weight: var(--font-weight-regular);
+  }
+
+  &.p-16 {
+    font-size: var(--font-size-p-16);
+    line-height: var(--line-height-p-16);
+    font-weight: var(--font-weight-regular);
+  }
+
+  &.p-14 {
+    font-size: var(--font-size-p-14);
+    line-height: var(--line-height-p-14);
+    font-weight: var(--font-weight-regular);
+  }
+}
+
+.header, .footer {
+  grid-column: 1/-1;
+  margin-bottom: 48px;
+}
+
+

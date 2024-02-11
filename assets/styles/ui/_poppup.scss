@@ -1,0 +1,35 @@
+.poppup {
+    position: relative;
+    width: 280px;
+    border-bottom: 2px solid var(--input-color-default);
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 6px;
+    transition: 0.3s;
+    cursor: pointer;
+    &:hover {   
+      border-color: var(--input-color-hovered)
+    };
+  &__header {
+    display: contents;
+  }
+  &__options {
+    position: absolute;
+    width: 100%;
+    top: 30px;
+    box-shadow: 0px 8px 16px 0px #00000014;
+    &_item {
+      display: flex;
+      align-items: center;
+      padding: 16px 24px 16px 24px;
+      height: 8px;
+      &:hover {
+        background-color: var(--input-color-hovered);
+        color: #ffffff;
+      }
+      &--active {
+        color: var(--poppup-color-text-active);
+      }
+    }
+  }
+}

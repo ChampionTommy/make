@@ -1,0 +1,54 @@
+.button {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  width: 148px;
+  height: 56px;
+  color: #fff;
+  border: none;
+  border-radius: 32px;
+  transition: all 0.3s ease;
+  background: linear-gradient(var(--gradient-angle), #DD80ED 0%, #3D28E3 83.33%);
+  cursor: pointer;
+  background-size: 100%;
+  z-index: 1;
+  p {
+    font-weight: 600;
+  }
+}
+
+.button::before {
+  --gradient-angle: 206.57deg;
+  content: "";
+  position: absolute;
+  width: 148px;
+  height: 56px;
+  border-radius: 32px;
+  background: linear-gradient(var(--gradient-angle), #DD80ED 0%, #3D28E3 83.33%);
+  cursor: pointer;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+.button:hover::before {
+  opacity: 1;
+}
+
+.button:active::before {
+--gradient-angle: 225deg;
+  opacity: 1; 
+  background: linear-gradient(var(--gradient-angle), #DD80ED 0%, #3D28E3 83.33%); 
+}
+
+.button:disabled {
+  color: #fff;
+  background: var(--tab-color-boder);
+  z-index: -1;
+  &:before {
+    opacity: 0;
+    z-index: -1;
+  }
+}

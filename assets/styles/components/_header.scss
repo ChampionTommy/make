@@ -1,0 +1,32 @@
+.header {
+  &__block {
+    display: flex;
+    justify-content: space-between;
+    &-profile {
+      display: flex;
+      align-items: center;
+    &-logo {
+      width: 56px;
+      height: 56px;
+    }
+    &-user {
+        font-size: 14px;
+      &-name {
+        color: var(--text-color);
+        font-weight: 500;
+        line-height: var(--line-height-p-14);
+        
+      }
+      &-subname {
+        color: var(--text-color-secondary)
+      }
+    }
+    }
+      &-btn {
+        border: none;
+        background: none;
+        cursor: pointer;
+      }
+  }
+}
+

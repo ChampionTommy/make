@@ -1,0 +1,24 @@
+.nav {
+    position: fixed;
+    margin-top: 216px;
+  &__list {
+    &-item {
+      font-size: 14px;
+      line-height: var(--line-height-p-14);
+      margin-bottom: 16px;
+      color: var(--text-color-secondary);
+      cursor: pointer;
+      &:hover {
+        color: var(--text-color-primary);
+      }
+      &--active {
+        color: var(--text-color-active);
+        &:hover {
+          color: var(--text-color-active);
+        }
+      }
+
+    }
+  }
+
+}
