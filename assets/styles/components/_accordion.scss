@@ -27,10 +27,10 @@
   }
 
   &__content {
-    width: 592px;
     padding-top: 24px;
     padding-bottom: 30px;
     display: none;
+    border-bottom:2px solid var(--input-color-hovered);
   }
 
   &__content--active {

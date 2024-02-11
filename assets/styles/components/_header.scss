@@ -1,15 +1,17 @@
 .header {
+  margin-top: 32px;
   &__block {
     display: flex;
     justify-content: space-between;
     &-profile {
       display: flex;
       align-items: center;
-      width: 167px;
+      width: 182px;
       height: 40px;
       img {
-        width: 40px;
+        width: 55px;
         margin-top: 6px;
+        margin-right: 14px;
       }
     &-user {
         font-size: 14px;
