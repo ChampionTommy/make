@@ -60,11 +60,13 @@ document.addEventListener('DOMContentLoaded', initSmoothScroll);
 function setupInputValidation(inputId: string, errorId: string): void {
   const inputElement = document.getElementById(inputId) as HTMLInputElement;
   const errorElement = document.getElementById(errorId) as HTMLDivElement;
+  const labelElement = document.querySelector(`label[for="${inputId}"]`) as HTMLLabelElement;
 
   const updateInputState = (): void => {
     const isValid = inputElement.validity.valid;
     inputElement.classList.toggle('input__field--error', !isValid);
     errorElement.classList.toggle('input__error--show', !isValid);
+    labelElement.classList.toggle('input__label--error', !isValid);
   };
 
   const handleFocus = (): void => {
@@ -116,11 +118,12 @@ function createToggleableElement(elementId: string, optionsId: string): { open: 
 createToggleableElement('poppup', 'options');
 
 function setupCheckboxBackgroundChange(): void {
-  // Получаем элементы чекбокса и его родителя
-  const checkboxInput: HTMLInputElement | null = document.querySelector('.checkbox-block__input');
-  const checkboxBlock: HTMLElement | null = document.querySelector('.checkbox-block');
+  // Получаем конкретный элемент чекбокса по его идентификатору
+  const checkboxInput: HTMLInputElement | null = document.querySelector('#myCheckbox3');
+  const checkboxBlock: HTMLElement | null = checkboxInput?.closest('.checkbox-block') ?? null;
+  const checkboxSpan: HTMLSpanElement | null = checkboxBlock?.querySelector('.checkbox-block__checkmark') ?? null;
 
-  if (!checkboxInput || !checkboxBlock) {
+  if (!checkboxInput || !checkboxBlock || !checkboxSpan) {
     console.error('Не удалось найти элементы чекбокса и его родителя.');
     return;
   }
@@ -129,9 +132,13 @@ function setupCheckboxBackgroundChange(): void {
   const handleCheckboxChange = (event: Event) => {
     const target = event.target as HTMLInputElement;
     if (target.checked) {
-      checkboxBlock.style.backgroundColor = '#3E29E3';
+      if (checkboxSpan) { // Проверяем, что checkboxSpan не null
+        checkboxSpan.style.backgroundColor = '#3E29E3';
+      }
     } else {
-      checkboxBlock.style.backgroundColor = 'transparent'; // или любой другой цвет по умолчанию
+      if (checkboxSpan) { // Проверяем, что checkboxSpan не null
+        checkboxSpan.style.backgroundColor = 'transparent';
+      }
     }
   };
 
@@ -142,7 +149,20 @@ function setupCheckboxBackgroundChange(): void {
 // Вызываем функцию после загрузки DOM
 document.addEventListener('DOMContentLoaded', setupCheckboxBackgroundChange);
 
+function setupRadioButton(radioId: string): void {
+  const radioElement = document.getElementById(radioId) as HTMLInputElement;
 
+  // Обработчик изменения состояния radio button
+  const handleChange = (): void => {
+    console.log(`Radio button ${radioId} is ${radioElement.checked ? 'checked' : 'unchecked'}`);
+  };
+
+  // Добавление обработчика изменения состояния
+  radioElement.addEventListener('change', handleChange);
+}
+
+// Инициализация radio button
+setupRadioButton('myRadio3');
 
 function initAccordion() {
     const accordionItems = document.querySelectorAll('.accordion__item');
