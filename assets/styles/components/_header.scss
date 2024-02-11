@@ -5,10 +5,12 @@
     &-profile {
       display: flex;
       align-items: center;
-    &-logo {
-      width: 56px;
-      height: 56px;
-    }
+      width: 167px;
+      height: 40px;
+      img {
+        width: 40px;
+        margin-top: 6px;
+      }
     &-user {
         font-size: 14px;
       &-name {

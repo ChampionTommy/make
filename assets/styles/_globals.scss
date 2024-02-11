@@ -8,6 +8,7 @@
   --input-color-error: #E80F3B;
   --poppup-color-text-active: #3D28E1;
   --gradient-angle: 45deg;
+  
   --font-size-h1: 48px;
   --font-size-h2: 32px;
   --font-size-h3: 24px;
@@ -17,7 +18,6 @@
   --font-size-p-16: 16px;
   --font-size-p-14: 14px;
 
-  // Переменные для межстрочного интервала
   --line-height-h1: 56px;
   --line-height-h2: 40px;
   --line-height-h3: 32px;
@@ -26,17 +26,86 @@
   --line-height-p-18: 28px;
   --line-height-p-16: 24px;
   --line-height-p-14: 20px;
-
-  // Переменные для веса шрифта
+  
   --font-weight-bold: bold;
   --font-weight-medium: 500;
   --font-weight-regular: 400;
 }
-* {
-	margin: 0;
-	padding: 0;
+
+// Переменные для размеров шрифтов и межстрочного интервала
+$font-size-h1: 48px;
+$font-size-h2: 32px;
+$font-size-h3: 24px;
+$font-size-h4: 18px;
+$font-size-p-lead: 24px;
+$font-size-p-18: 18px;
+$font-size-p-16: 16px;
+$font-size-p-14: 14px;
+
+$line-height-h1: 56px;
+$line-height-h2: 40px;
+$line-height-h3: 32px;
+$line-height-h4: 28px;
+$line-height-p-lead: 32px;
+$line-height-p-18: 28px;
+$line-height-p-16: 24px;
+$line-height-p-14: 20px;
+
+// Стили для заголовков
+h1 {
+  font-size: $font-size-h1;
+  line-height: $line-height-h1;
+  font-weight: bold;
 }
 
+h2 {
+  font-size: $font-size-h2;
+  line-height: $line-height-h2;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: $font-size-h3;
+  line-height: $line-height-h3;
+  font-weight: 500;
+}
+
+h4 {
+  font-size: $font-size-h4;
+  line-height: $line-height-h4;
+  font-weight: 500;
+}
+
+// Стили для параграфов
+.p-lead {
+  font-size: $font-size-p-lead;
+  line-height: $line-height-p-lead;
+  font-weight: normal;
+}
+
+.p-18 {
+  font-size: $font-size-p-18;
+  line-height: $line-height-p-18;
+  font-weight: normal;
+}
+
+.p-16 {
+  font-size: $font-size-p-16;
+  line-height: $line-height-p-16;
+  font-weight: normal;
+}
+
+.p-14 {
+  font-size: $font-size-p-14;
+  line-height: $line-height-p-14;
+  font-weight: normal;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 html {
   font-family: Graphik;
@@ -47,6 +116,9 @@ a {
 }
 ul, li {
   list-style: none;
+}
+img, table {
+  width: 100%;
 }
 input:focus-visible {
   outline: none;

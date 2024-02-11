@@ -5,22 +5,23 @@ $mobile-breakpoint: 320px;
 .grid {
   display: grid;
   grid-template-columns: repeat(12, minmax(60px, 80px));
-  grid-gap: 32px;
-  
+  column-gap: 32px;
   &__col {
     grid-column: span 12;
   }
+
   @media (min-width: $desktop-breakpoint) {
     grid-template-columns: repeat(12, minmax(60px, 80px));
   }
 
   @media (min-width: $tablet-breakpoint) and (max-width: $desktop-breakpoint) {
     grid-template-columns: repeat(8, minmax(56px, 88px));
+    column-gap: 32px;
   }
 
   @media (max-width: $tablet-breakpoint) {
-    grid-template-columns: repeat(4, minmax(60px, 80px));
-      grid-gap: 24px;
+    grid-template-columns: repeat(4, minmax(56px, 88px));
+    column-gap: 24px;
   }
 }
 .main__block {
@@ -40,7 +41,7 @@ $mobile-breakpoint: 320px;
   }
 }
 
-@media (max-width: 735px) {
+@media (max-width: 735px) and (min-width: 320px) {
   :root {
     --font-size-h1: 28px;
     --font-size-h2: 24px;
@@ -81,3 +82,41 @@ $mobile-breakpoint: 320px;
     --line-height-p-14: 16px;
   }
 }
+
+@media (min-width: $mobile-breakpoint) and (max-width: $tablet-breakpoint) {
+  .main {
+    grid-column: 2/-1;
+    margin-bottom: 160px;
+  }
+  .nav__list-item {
+    width: 88px;
+    word-wrap: break-word;
+  }
+  .main__block__subtitle {
+    width: 100%;
+  }
+  .main table tbody tr th p {
+    margin-right: 0;
+  }
+  .main table tbody tr td p {
+    margin-right: 0;
+  }
+}
+
+@media (min-width: $desktop-breakpoint) {
+  .main__block__subtitle {
+    width: 592px;
+  }
+  .main {
+    grid-column: 3/-1;
+    margin-bottom: 160px;
+  }
+  .main table tbody tr th p {
+    margin-right: 32px;
+  }
+  .main table tbody tr td p {
+    margin-right: 0;
+  }
+}
+
+

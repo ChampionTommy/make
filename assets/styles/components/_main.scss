@@ -27,9 +27,6 @@ $tab-content-item-margin-bottom: 52px;
 
 
 .main {
-  grid-column: 3 / -1;
-  margin-bottom: 160px;
-
   &__block {
     &:first-child, &:nth-child(2)  {
       margin-bottom: $margin-bottom-md;
@@ -51,17 +48,14 @@ $tab-content-item-margin-bottom: 52px;
     }
 
     &-container {
-      width: 904px;
       margin-bottom: 64px;
     }
     &__subtitle {
-      width: 592px;
       p {
         margin-bottom: 80px;
       }
     }
     &:nth-child(2) &__subtitle {
-      width: 592px;
       margin-bottom: 48px;
     }
     &-responseView {
@@ -100,6 +94,7 @@ $tab-content-item-margin-bottom: 52px;
       }
     }
     &_button {
+      margin-top: 232px;
       h3 {
         margin-bottom: 32px;
       }
@@ -107,7 +102,6 @@ $tab-content-item-margin-bottom: 52px;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        width: 904px;
         column-gap: 164px;
         row-gap: 32px;
         &_item {
@@ -162,17 +156,9 @@ $tab-content-item-margin-bottom: 52px;
           th {
           text-align: left;
             p {
-              width: 176px;
               color: var(--text-color-secondary);
-              margin-right: 32px;
             }
           }
-          td {
-            p {
-            width: 176px;
-            margin-right: 32px;
-          }
-        }
         }
       }
   }
