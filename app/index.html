@@ -6,6 +6,34 @@
     <title>Make</title>
   </head>
   <body>
+    <div id="welcome" class="userdata userdata--bg">
+      <div id="close" class="userdata--btn-close">
+        <img src="/assets/images/ico_menu_close.svg" alt="close-button">
+      </div>
+      <div class="userdata__container">
+        <div class="userdata__container_block">
+          <div class="userdata__container_block__header">
+            <img src="/assets/images/logo.svg" alt="logo" />
+            <p class="p-14">Задание выполнил</p>
+          </div>
+          <div class="userdata__container_block__main">
+            <h1>Иванов</h1>
+            <h1>Иван Иванович</h1>
+            <p class="p-16">
+              Краткое описание. Например, студент 4 курса специальности
+              «Прикладная информатика» в КузГТУ
+            </p>
+            <h4>+7 (800) 555-35-35</h4>
+          </div>
+          <div class="userdata__container_block__footer">
+            <a href="https://t.me/championtommy" class="userdata__container_block__footer_pin">
+              <img src="/assets/images/pin.svg" alt="pin" />
+              <p class="p-16">Ссылка на соцсеть/месседжер</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
     <div id="app" class="grid">
       <header class="grid__col header">
         <div class="header__block">
@@ -18,7 +46,7 @@
               </div>
             </div>
           </div>
-          <button class="header__block-btn">
+          <button id="open" class="header__block-btn">
             <img src="/assets/images/ico_menu.svg" alt="button" />
           </button>
         </div>
@@ -145,7 +173,7 @@
                 class="tabs__content-item tabs__content-item--active"
                 data-content="1"
               >
-                <ul>
+                <ul class="desktop">
                   <li>
                     <p class="p-14">Заголовок H1, 48/56, bold</p>
                     <h1>Текст заголовка</h1>
@@ -183,7 +211,7 @@
                 </ul>
               </div>
               <div class="tabs__content-item" data-content="2">
-                <ul>
+                <ul class="mobile">
                   <li>
                     <p class="p-14">Заголовок H1, 32/40, bold</p>
                     <h1>Текст заголовка</h1>
