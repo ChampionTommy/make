@@ -15,18 +15,15 @@ export function createPoppupElement(elementId: string, optionsId: string): { ope
   };
 
   const selectOption = (optionId: string) => {
-    // Сброс предыдущего выбранного элемента
     const previousSelected = options.querySelector('poppup__options_item--active');
     if (previousSelected) {
       previousSelected.classList.remove('poppup__options_item--active');
     }
 
-    // Выбор нового элемента
     const newSelected = options.querySelector(`#${optionId}`);
     if (newSelected) {
       newSelected.classList.add('poppup__options_item--active');
 
-      // Обновление текста в заголовке poppup
       const poppupHeader = element.querySelector('.poppup__header p');
       if (poppupHeader) {
         poppupHeader.textContent = newSelected.textContent;
@@ -42,7 +39,6 @@ export function createPoppupElement(elementId: string, optionsId: string): { ope
     }
   });
 
-  // Добавление обработчика клика на каждый элемент списка
   options.querySelectorAll('.poppup__options_item').forEach((option) => {
     option.addEventListener('click', () => {
       selectOption(option.id);
@@ -53,7 +49,6 @@ export function createPoppupElement(elementId: string, optionsId: string): { ope
   return { open, close, selectOption };
 }
 
-// Использование функции
 createPoppupElement('poppup', 'options');
 
 
